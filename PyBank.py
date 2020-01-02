@@ -21,13 +21,23 @@ with open(csvpath, newline='') as csvfile:
 
     print(csvreader)
 
-    # Read the header row first (skip this step if there is no header)
-    #csv_header = next(csvreader)
-    #print(f"CSV Header: {csv_header}")
+    #Read the header row first (skip this step if there is no header)
+    csv_header = next(csvreader)
+    print(f"CSV Header: {csv_header}")
 
+    
+    count = 0
+    add = 0
+    
     # Read each row of data after the header
     for row in csvreader:
         print(row)
+        count = count +1
+        add= add+ int(row[1])
+    
+    print("Total Months "  + str(count) )
+    print("Total " + str(add))
+    
 
   
     
