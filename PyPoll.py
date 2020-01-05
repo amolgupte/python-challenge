@@ -25,13 +25,23 @@ with open(csvpath, newline='') as csvfile:
             countLi=countLi+1
         elif(row[2]=="O'Tooley"):
             countOTooley=countOTooley+1
+        a = countKhan
+        b = countCorrey
+        c = countLi
+        d = countOTooley
+        e = a+b+c+d
 
-     print("Election Results ")
-     print("-------------------------------")
-     print("Total Votes: "+ str(count))
-     print("--------------------------------")
-     print("Khan: " +str(countKhan))
-     print("Correy: " + str(countCorrey))
-     print("Li: " + str(countLi))
-     print("O'Tooley: "+ str(countOTooley))
-     print("-------------------------------")
+print("Election Results ")
+print("-------------------------------")
+print("Total Votes: "+ str(count))
+print("--------------------------------")
+print("Khan: " + str(round(a/e*100,3)) + "% (" + str(countKhan) + ")")
+print("Correy: " + str(round(b/e*100,3)) + "% (" + str(b) + ")")
+print("Li: " + str(round(c/e*100,3)) + "% (" + str(c) + ")")
+print("O'Tooley: "+ str(round(d/e*100,3)) + "% (" + str(d) + ")")
+print("-------------------------------")
+
+dict_max = { a:"Khan", b:"Correy", c:"Li", d:"O'Tooley" }
+
+print("Winner: "+dict_max[max(dict_max)])
+     
