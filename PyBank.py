@@ -58,13 +58,16 @@ with open(csvpath, newline='') as csvfile:
 
     avg = Amount / len(Difference)
     print("Average Change: "+ str(round(avg,2)))
-    #Difference.sort()
+    Difference.sort()
     print("Greatest Increase in Profits: " + str(max(Difference)))
     print("Greatest Decrese in Losses: " + str(min(Difference)))
 
-    
-
-
+    f = open("C:/Users/amolg/OneDrive/Desktop/DU-DEN-DATA-PT-11-2019-U-C/02-Homework/03-Python/Instructions/PyBank/Resources/PyBank.txt",'w')
+    f.write("Total Months "  + str(count) +"\n" )
+    f.write("Total " + str(add)+"\n")
+    f.write("Average Change: "+ str(round(avg,2))+"\n")
+    f.write("Greatest Increase in Profits: " + str(max(Difference))+ "\n")
+    f.write("Greatest Decrese in Losses: " + str(min(Difference))+"\n")
    
     
 
